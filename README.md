@@ -1,37 +1,123 @@
-# TOS Dashboard Concept
+# TOS Dashboard Concept: Product Discovery and Stop-Decision Case Study (2022)
 
-A product concept from October 2022 for a ThinkOrSwim-style trading dashboard for my community, Trade with MAK: commissioned UI design direction (via Fiverr) plus an Angular scaffold I started myself. The build stopped at the shell stage when the business pivoted, and this repo presents it exactly as it was - a concept, not a product. That honesty is the point.
+> **Status - historical concept, not a product:** This repository preserves commissioned design direction and an incomplete Angular shell created in October 2022 for Trade with MAK. It never reached dashboard logic, authentication, API integration, or production use. It does not provide live positions, trading signals, account access, or investment advice.
 
-## The idea
+The concept explored whether the member experience then spread across ThinkOrSwim screen sharing, Discord, and subscription tooling should become a dedicated web dashboard. The work stopped at the shell stage when the business consolidated around WordPress and MemberPress and the custom-build economics no longer justified continued delivery.
 
-Members followed my trades through Discord messages and a ThinkOrSwim screen share. The concept was a web dashboard that would make that experience first-class:
+## Executive brief
 
-- **Live positions and orders panel** styled after the ThinkOrSwim Activity and Positions monitor (working orders, filled orders, position statement) so members could read my book at a glance instead of scrubbing a stream.
-- **Discord integration** to surface the community trading-floor feed and alerts next to the positions panel.
-- **Stripe/membership integration** so access mirrored subscription status, with basic growth metrics for the admin side.
-- **Brand layer** using the tradewithMAK identity: dark trading-terminal aesthetic, mission statement hero, "Trade with the best" tagline.
+| Area | Scope |
+|---|---|
+| Problem | Members had to follow live commentary, position context, community messages, and access status across separate tools |
+| Concept | A responsive dashboard combining a positions/orders view, Discord activity, membership access, and the Trade with MAK brand |
+| My role | Product concept, workflow definition, reference curation, vendor direction, Angular scaffold initiation, and stop decision |
+| Discovery period | October 2022 |
+| Delivery state | Design assets plus an Angular 14/Material navigation shell |
+| Production state | Never integrated, authenticated, deployed, or used for live trading |
 
-## What was actually produced
+## My role
 
-1. **Design direction (commissioned, Fiverr, October 2022)** - `design/` contains the shareable brand assets from that engagement: the mission-statement banner, the script tagline banner, and a hero background concept. The working references for the dashboard, Discord, and Stripe panels were annotated screenshots of my real trading account, the live member server, and the live Stripe dashboard; those contain account and member data, so they are described here but not published.
-2. **Angular prototype (mine)** - `prototype/` is the scaffold I generated and began wiring up: Angular 14 with Angular Material, a responsive side-nav shell (`nav` component via the Material sidenav schematic), routing module, and a custom Material theme. It is roughly 360 lines of source. There is no dashboard logic, no API integration, and no auth - it is the shell, and that is where it stopped.
+I framed the member workflow problem, selected and redacted real operating references, wrote the product concept, directed the commissioned design work, generated and began configuring the Angular scaffold, evaluated the integration and support burden, and made the decision to stop before partial release.
 
-## Why it stopped
+## Parent-program context and metric provenance
 
-By late 2022 the community's stack was consolidating on WordPress/MemberPress, and the effort a custom real-time dashboard demanded was not justified by the size of the business (peak 245 subscribers). I shut the experiment down at the scaffold stage rather than half-ship it.
+These figures describe Trade with MAK's subscription program. They do not describe this prototype's adoption or any investment performance.
 
-## Running the prototype
+| Metric | Figure | Scope/date | Basis |
+|---|---:|---|---|
+| Community footprint | Approximately 2,000 | Across channels over the program lifecycle | Founder-reported footprint |
+| Paid subscribers | 1,200+ | Cumulative across the program lifetime | Founder-reported cumulative total; not concurrent or active subscribers |
+| Monthly recurring revenue | $28,696.05 | Stripe screenshot marked 'Data as of Feb. 3'; source crop does not show the year | Documented point-in-time snapshot |
+| Active subscriptions | 321 | Same Stripe snapshot | Documented point-in-time count |
+| Gross and net sales volume | $98,999.95 gross / $89,093.60 net | One LaunchPass/Stripe account, Jan. 1, 2021-July 7, 2022 | Documented account-specific all-time snapshot; not profit |
+| Customers and payments | 862 customers / 1,610 successful payments | Same account and period | Documented account-specific counts; payments are not unique subscribers |
 
-```
+## Product hypothesis
+
+Members followed live sessions through Discord messages and a ThinkOrSwim screen share. The concept asked whether a single member-facing interface could reduce that fragmentation through:
+
+- a positions and orders panel modeled on the information hierarchy of the ThinkOrSwim Activity and Positions monitor;
+- a Discord panel surfacing the community trading-floor feed and alerts alongside position context;
+- Stripe or membership integration so access reflected subscription status and administrators could see basic operating metrics; and
+- a branded dark-terminal interface using the Trade with MAK mission statement and tagline.
+
+These were product requirements, not completed capabilities.
+
+## Discovery and delivery approach
+
+### 1. Workflow references
+
+The design engagement used annotated screenshots of the actual workflow: trading-account views, the member Discord environment, and the Stripe dashboard. Those references contained account and member information and are deliberately not public.
+
+### 2. Commissioned design direction
+
+The October 2022 Fiverr engagement produced the shareable brand assets in `design/`:
+
+- `mission-banner.jpg`;
+- `tagline-banner.jpg`; and
+- `hero-background-concept.png`.
+
+Third-party work should be identified and included only where reuse rights are confirmed.
+
+### 3. Angular shell
+
+`prototype/` contains the implementation state at the stop decision:
+
+- Angular 14.2 with TypeScript 4.7;
+- Angular Material and CDK 14.2;
+- routing and environment scaffolding;
+- a responsive Material side-navigation component generated through the sidenav schematic;
+- a custom Material theme; and
+- approximately 360 lines of source in the retained scaffold.
+
+There is no positions engine, market-data connection, Discord integration, Stripe integration, authentication, authorization, persistent data model, audit logging, or production deployment.
+
+## Why the project stopped
+
+By late 2022, Trade with MAK was consolidating its subscription and content stack on WordPress and MemberPress. Continuing a custom real-time dashboard would have added substantial integration, security, privacy, reliability, and support obligations. I stopped the experiment at the scaffold stage rather than allowing sunk cost to drive an unsupported product into partial release.
+
+That decision is part of the portfolio evidence: product leadership includes defining when not to continue.
+
+## Running the retained shell
+
+The scaffold requires the Angular 14-era toolchain pinned in `prototype/package.json` and a compatible Node 16 environment.
+
+```bash
 cd prototype
 npm install
 npx ng serve
 ```
 
-Requires Node 16+ and the Angular 14-era toolchain pinned in `package.json`. You will see a Material toolbar and an empty side-nav shell - that is the honest extent of it.
+Open `http://localhost:4200/`. The expected output is a Material toolbar and empty responsive side-navigation shell. Any deprecation, dependency, or security warnings should be evaluated before running an older framework locally.
 
-## What I would keep from this
+## Acceptance status
 
-- Designing from real screenshots of the actual workflow (trader screen, community feed, billing) kept the concept grounded in what members actually did.
-- Buying design direction cheaply before writing code was the right order of operations.
-- Killing the build early, in writing, with reasons, is a product decision too.
+| Capability | Discovery intent | Retained state |
+|---|---|---|
+| Responsive application shell | Establish basic navigation and layout | Partial scaffold present |
+| Positions and orders | Present member-readable position context | Not implemented |
+| Discord activity | Co-locate community feed and alerts | Not implemented |
+| Subscription access | Reflect membership status | Not implemented |
+| Authentication and authorization | Protect member and account information | Not implemented |
+| Admin metrics | Present aggregate subscription operations | Not implemented |
+| Production readiness | Security, monitoring, support, and deployment | Out of scope; never attempted |
+
+## What I learned
+
+- Real workflow references make product discovery more concrete, but privacy-safe public evidence must be separated from internal references.
+- Commissioning low-cost design direction before full implementation can test the information architecture without committing to a build.
+- Integration scope must include security, support, reliability, and data governance, not only visible interface work.
+- Stopping a project early can be the correct portfolio decision when the operating model changes.
+
+## Limitations
+
+- This is an incomplete historical scaffold built against an older Angular toolchain.
+- No functional dashboard claim should be inferred from the design assets or navigation shell.
+- No live account, member, payment, Discord, or market data is included.
+- Program-level community and Stripe metrics do not represent prototype adoption.
+
+## Authorship and provenance
+
+I defined the product concept, selected and redacted workflow references, directed the design engagement, generated and began configuring the Angular shell, and made the stop decision. The design assets were commissioned through Fiverr. This public documentation was assembled in 2026 with AI assistance under my direction.
+
+Author: Sama Mushtaq
