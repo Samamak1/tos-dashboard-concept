@@ -51,7 +51,7 @@ The design engagement used annotated screenshots of the actual workflow: trading
 
 ### 2. Commissioned design direction
 
-The October 2022 Fiverr engagement produced the shareable brand assets in `design/`:
+The October 2022 third-party design engagement produced the shareable brand assets in `design/`:
 
 - `mission-banner.jpg`;
 - `tagline-banner.jpg`; and
@@ -118,6 +118,6 @@ Open `http://localhost:4200/`. The expected output is a Material toolbar and emp
 
 ## Authorship and provenance
 
-I defined the product concept, selected and redacted workflow references, directed the design engagement, generated and began configuring the Angular shell, and made the stop decision. The design assets were commissioned through Fiverr. This public documentation was assembled in 2026 with AI assistance under my direction.
+I defined the product concept, selected and redacted workflow references, directed the design engagement, generated and began configuring the Angular shell, and made the stop decision. The design assets were commissioned through a third-party marketplace. This public documentation was assembled in 2026 with AI assistance under my direction.
 
 Author: Sama Mushtaq
